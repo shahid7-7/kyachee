@@ -27,7 +27,7 @@
     </script>
 
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; line-height: 1.6; color: #333; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0;  color: black; }
 
         header { 
             background: #ffcc00; 
@@ -36,9 +36,13 @@
         }
 
         header h1 { 
-            font-size: 3.5em; 
+            font-size: 56px;
             margin: 0; 
             letter-spacing: -1px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        header h2 {
+            margin: 0; margin-left: 5.5em; color: red; font-size: xx-large;
         }
 
         header p { 
@@ -68,7 +72,7 @@
 
         .product-img {
             width: 100%;
-            height: 250px;
+            height: 370px;
             background-color: #eee;
             border-radius: 5px;
             margin-bottom: 15px;
@@ -99,6 +103,29 @@
             display: inline-block; 
             margin-top: 20px; 
         }
+        /* മൊബൈൽ ഫോണിന് വേണ്ടിയുള്ള മാറ്റം */
+@media (max-width: 600px) {
+    .product-container {
+        gap: 10px; /* കാർഡുകൾക്കിടയിലെ വിടവ് കുറയ്ക്കാൻ */
+        padding: 10px;
+    }
+
+    .product-card {
+        width: calc(50% - 5px); /* ഒരു വരിയിൽ രണ്ട് കാർഡുകൾ വരാൻ */
+        min-width: unset;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+
+    .product-img {
+        height: 350px; 
+        width: 150px;/* മൊബൈലിൽ ഇമേജ് സൈസ് ക്രമീകരിക്കാൻ */
+    }
+
+    header h1 {
+        font-size: 2.5em; /* ഹെഡിംഗ് സൈസ് അല്പം കുറയ്ക്കാൻ */
+    }
+}
 
         footer { text-align: center; padding: 20px; background: #222; color: #777; }
     </style>
@@ -107,14 +134,16 @@
 <body>
 
     <header>
-        <h1>Kyachee Snaxx</h1>
+        <h1>Kyachee </h1>
+        <h2>snaxx</h2>
         <p>"Fun to say, better to eat"</p>
     </header>
 
     <nav>
         <a href="#">Home</a>
-        <a href="#products">Products</a>
         <a href="#contact">Contact</a>
+        <a href="orderkyachee.html">Order</a>
+
     </nav>
 
     <section class="hero">
@@ -176,7 +205,7 @@
 
         </div>
 
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSermyMecIkyYFpOST4Rpd_B29zLx45oiMpXP6_v_BbJCqfRmw/viewform" class="order-btn" target="_blank">Order Now</a>
+        <a href="orderkyachee.html" class="order-btn" >Order Now</a>
 
     </section>
 
@@ -188,6 +217,8 @@
 
         <a href="https://maps.app.goo.gl/CZnFcyiJfntQVXqbA" class="order-btn" target="_blank">Location</a>
     </section>
+
+    
 
     <footer>
         © 2024 Kyachee Snaxx. All Rights Reserved.
