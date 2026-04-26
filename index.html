@@ -33,61 +33,117 @@
   "url": "https://kyachee-snaxx.github.io/kyachee/"
 }
 </script>
-
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0;  color: black; }
+        :root {
+            --primary-color: #ffcc00; 
+            --secondary-color: #d32f2f;
+            --dark-color: #1a1a1a;
+            --white: #ffffff;
+            --light-grey: #f4f4f4;
+        }
 
+        body { 
+            font-family: 'Poppins', sans-serif; 
+            margin: 0;  
+            color: var(--dark-color);
+            background-color: var(--white);
+            line-height: 1.6;
+        }
+
+        /* --- Header Section --- */
         header { 
-            background: #ffcc00; 
-            padding: 30px 50px; 
-            text-align: center; 
+            background: var(--primary-color); 
+            padding: 50px 20px; 
+            text-align: center;
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
         }
 
         header h1 { 
-            font-size: 56px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 4.5rem;
             margin: 0; 
-            letter-spacing: -1px;
-            font-family: 'Times New Roman', Times, serif;
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: -2px;
         }
+
         header h2 {
-            margin: 0; margin-left: 5.5em; color: red; font-size: xx-large;
+            margin: -15px 0 10px 0;
+            color: var(--secondary-color);
+            font-size: 2rem;
+            text-transform: lowercase;
+            font-weight: 400;
         }
 
         header p { 
-            margin-top: 10px; 
-            font-style: italic; 
-            font-weight: bold;
+            font-size: 1.2rem;
+            font-weight: 600;
+            font-style: italic;
         }
 
-        nav { display: flex; justify-content: center; background: #333; }
-        nav a { color: white; padding: 14px 20px; text-decoration: none; text-transform: uppercase; font-weight: bold; }
-        nav a:hover { background: #ffcc00; color: #333; }
+        /* --- Navigation --- */
+        nav { 
+            display: flex; 
+            justify-content: center; 
+            background: var(--dark-color); 
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
 
-        .hero { text-align: center; padding: 50px 20px; background: #f4f4f4; }
-        .hero h2 { color: #d32f2f; }
+        nav a { 
+            color: white; 
+            padding: 15px 25px; 
+            text-decoration: none; 
+            text-transform: uppercase; 
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            transition: 0.3s;
+        }
 
-        .products { padding: 40px 20px; text-align: center; }
-        .product-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
+        nav a:hover { color: var(--primary-color); }
+
+        /* --- Hero --- */
+        .hero { 
+            text-align: center; 
+            padding: 60px 20px; 
+            background: var(--light-grey);
+        }
+
+        .hero h2 { font-size: 2.2rem; color: var(--secondary-color); margin-bottom: 10px; }
+
+        /* --- Product Grid --- */
+        .products { padding: 40px 20px; max-width: 1200px; margin: 0 auto; }
+        
+        .product-container { 
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            padding: 20px 0;
+        }
 
         .product-card { 
-            border: 1px solid #ddd; 
-            border-radius: 8px; 
+            border: 1px solid #eee;
+            border-radius: 12px; 
             padding: 15px; 
-            width: 220px; 
-            box-shadow: 2px 2px 10px rgba(0,0,0,0.1); 
             background: #fff;
+            text-align: center;
+            transition: transform 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
         }
 
         .product-img {
             width: 100%;
-            height: 370px;
-            background-color: #eee;
-            border-radius: 5px;
-            margin-bottom: 15px;
+            height: 320px;
+            border-radius: 8px;
             overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            margin-bottom: 15px;
         }
 
         .product-img img {
@@ -96,76 +152,74 @@
             object-fit: cover;
         }
 
-        .product-card h3 { margin: 10px 0; }
-        .price { font-size: 1.2em; color: #d32f2f; font-weight: bold; }
+        .product-card h3 { font-size: 1.3rem; margin: 10px 0; }
+        .price { font-size: 1.2rem; color: var(--secondary-color); font-weight: bold; }
 
-        .contact-section { background: #333; color: white; padding: 40px 20px; text-align: center; }
+        /* --- Contact --- */
+        .contact-section { 
+            background: var(--dark-color); 
+            color: white; 
+            padding: 60px 20px; 
+            text-align: center; 
+        }
 
+        /* --- Buttons --- */
         .order-btn { 
-            background: #ffcc00; 
-            color: #333; 
-            padding: 15px 30px; 
+            background: var(--primary-color); 
+            color: var(--dark-color); 
+            padding: 16px 35px; 
             text-decoration: none; 
             font-weight: bold; 
             border-radius: 5px; 
             display: inline-block; 
             margin-top: 20px; 
+            text-transform: uppercase;
+            transition: 0.3s;
         }
-        /* മൊബൈൽ ഫോണിന് വേണ്ടിയുള്ള മാറ്റം */
-@media (max-width: 600px) {
-    .product-container {
-        gap: 10px; /* കാർഡുകൾക്കിടയിലെ വിടവ് കുറയ്ക്കാൻ */
-        padding: 10px;
-    }
 
-    .product-card {
-        width: calc(50% - 5px); /* ഒരു വരിയിൽ രണ്ട് കാർഡുകൾ വരാൻ */
-        min-width: unset;
-        padding: 10px;
-        box-sizing: border-box;
-    }
+        .order-btn:hover {
+            background: var(--white);
+        }
 
-    .product-img {
-        height: 350px; 
-        width: 150px;/* മൊബൈലിൽ ഇമേജ് സൈസ് ക്രമീകരിക്കാൻ */
-    }
+        /* --- Mobile Responsiveness --- */
+        @media (max-width: 600px) {
+            header h1 { font-size: 3rem; }
+            .product-container { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+            .product-img { height: 200px; }
+            .product-card h3 { font-size: 1rem; }
+            .price { font-size: 1rem; }
+        }
 
-    header h1 {
-        font-size: 2.5em; /* ഹെഡിംഗ് സൈസ് അല്പം കുറയ്ക്കാൻ */
-    }
-}
-
-        footer { text-align: center; padding: 20px; background: #222; color: #777; }
+        footer { text-align: center; padding: 25px; background: #111; color: #666; font-size: 0.8rem; }
     </style>
 </head>
 
 <body>
 
     <header>
-        <h1>Kyachee </h1>
+        <h1>Kyachee</h1>
         <h2>snaxx</h2>
         <p>"Fun to say, better to eat"</p>
     </header>
 
     <nav>
-        <a href="#">Home</a>
+
+        <a href="#products">Products</a>
         <a href="#contact">Contact</a>
         <a href="orderkyachee.html">Order</a>
-
     </nav>
 
     <section class="hero">
-        <h2>Best Kerala Snacks</h2>
+        <h2>Premium Kerala Flavors</h2>
         <p>Kyachee Snaxx provides high-quality banana chips, murukku and traditional snacks.</p>
     </section>
 
     <section class="products" id="products">
-        <h2>Our Products</h2>
         <div class="product-container">
 
             <div class="product-card">
                 <div class="product-img">
-                    <img src="https://i.ibb.co/VWQDkyXZ/7106bb05-ef96-4edb-9aa8-68aa5beeacda.jpg" alt="Murukku snack">
+                    <img src="https://i.ibb.co/VWQDkyXZ/7106bb05-ef96-4edb-9aa8-68aa5beeacda.jpg" alt="Murukku">
                 </div>
                 <h3>Murukku</h3>
                 <p class="price">₹150/kg</p>
@@ -173,7 +227,7 @@
 
             <div class="product-card">
                 <div class="product-img">
-                    <img src="https://i.ibb.co/Zp47rMKM/69c9fb98-c69a-4354-bb20-78a7ab9bccf1-r1-c2.jpg" alt="Banana chips Kerala">
+                    <img src="https://i.ibb.co/Zp47rMKM/69c9fb98-c69a-4354-bb20-78a7ab9bccf1-r1-c2.jpg" alt="Banana Chips">
                 </div>
                 <h3>Banana Chips</h3>
                 <p class="price">₹150/kg</p>
@@ -181,7 +235,7 @@
 
             <div class="product-card">
                 <div class="product-img">
-                    <img src="https://i.ibb.co/ycx85w7Y/5f710085-b22f-4622-b498-50ab6c53aa5a.jpg" alt="Joystick snack">
+                    <img src="https://i.ibb.co/ycx85w7Y/5f710085-b22f-4622-b498-50ab6c53aa5a.jpg" alt="Joystick">
                 </div>
                 <h3>Joystick</h3>
                 <p class="price">₹150/kg</p>
@@ -189,7 +243,7 @@
 
             <div class="product-card">
                 <div class="product-img">
-                    <img src="https://i.ibb.co/PsDT9sby/69c9fb98-c69a-4354-bb20-78a7ab9bccf1-r1-c3.jpg" alt="Tapioca chips Kerala">
+                    <img src="https://i.ibb.co/PsDT9sby/69c9fb98-c69a-4354-bb20-78a7ab9bccf1-r1-c3.jpg" alt="Tapioca Chips">
                 </div>
                 <h3>Tapioca Chips</h3>
                 <p class="price">₹150/kg</p>
@@ -197,15 +251,15 @@
 
             <div class="product-card">
                 <div class="product-img">
-                    <img src="https://i.ibb.co/RpFxkTZK/69c9fb98-c69a-4354-bb20-78a7ab9bccf1-r1-c1.jpg" alt="Murukku Kerala snack">
+                    <img src="https://i.ibb.co/RpFxkTZK/69c9fb98-c69a-4354-bb20-78a7ab9bccf1-r1-c1.jpg" alt="Special Murukku">
                 </div>
-                <h3>Murukku</h3>
+                <h3>Special Murukku</h3>
                 <p class="price">₹150/kg</p>
             </div>
 
             <div class="product-card">
                 <div class="product-img">
-                    <img src="https://i.ibb.co/5X3VD5xB/69c9fb98-c69a-4354-bb20-78a7ab9bccf1-r2-c2.jpg" alt="Cheese balls snack">
+                    <img src="https://i.ibb.co/5X3VD5xB/69c9fb98-c69a-4354-bb20-78a7ab9bccf1-r2-c2.jpg" alt="Cheese Balls">
                 </div>
                 <h3>Cheese Balls</h3>
                 <p class="price">₹150/kg</p>
@@ -213,23 +267,23 @@
 
         </div>
 
-        <a href="orderkyachee.html" class="order-btn" >Order Now</a>
-
+        <div style="text-align: center;">
+            <a href="orderkyachee.html" class="order-btn">Place Your Order</a>
+        </div>
     </section>
 
     <section class="contact-section" id="contact">
-        <h2>Contact Us</h2>
-        <p>📞 +91 9744390615 | +91 9744390657</p>
-        <p>📧 shahid321bila@gmail.com</p>
-        <p>📍 Kottayam, Kerala</p>
-
-        <a href="https://maps.app.goo.gl/CZnFcyiJfntQVXqbA" class="order-btn" target="_blank">Location</a>
+        <h2>Get In Touch</h2>
+        <div style="margin: 20px 0;">
+            <p>📞 +91 9744390615 | +91 9744390657</p>
+            <p>📧 shahid321bila@gmail.com</p>
+            <p>📍 Kottayam, Kerala</p>
+        </div>
+        <a href="https://maps.app.goo.gl/CZnFcyiJfntQVXqbA" class="order-btn" target="_blank" style="background: white;">View Location</a>
     </section>
 
-    
-
     <footer>
-        © 2024 Kyachee Snaxx. All Rights Reserved.
+        © 2026 Kyachee Snaxx International. All Rights Reserved.
     </footer>
 
 </body>
