@@ -155,7 +155,7 @@
         <input type="text" name="data[Name]" placeholder="Your Name" required>
 
         <label>Phone Number</label>
-        <input type="text" name="data[Phone]" placeholder="Contact Number" required>
+<input type="tel" name="data[Phone]" placeholder="10 Digit Number" pattern="[0-9]{10}" title="Please type 10 numbers" maxlength="10" oninput="this.value = this.value.replace(/[^0-9]/g, '');" required>
 
         <label>Delivery Address</label>
         <textarea name="data[Address]" rows="3" placeholder="Flat No, Street, Landmark, Pin" required></textarea>
