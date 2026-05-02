@@ -50,6 +50,10 @@
             font-size: 2rem;
             text-transform: lowercase;
         }
+        header p {
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
 
         nav { 
             display: flex; 
@@ -132,6 +136,34 @@
             padding: 60px 20px; 
             text-align: center; 
         }
+        /* Place Order ബട്ടണിനുള്ള പ്രത്യേക സ്റ്റൈൽ */
+.place-order-wrapper {
+    text-align: center;
+    margin: 50px 0; /* മുകളിലും താഴെയും കുറച്ച് സ്പേസ് */
+}
+
+.order-now-btn {
+    background-color:red; /* റെഡ് കളർ കൂടുതൽ എടുത്ത് നിൽക്കും */
+    color: white;
+    padding: 18px 50px;
+    font-size: 1.3rem;
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+    border-radius: 50px; /* ബോർഡർ റൗണ്ട് ആക്കി */
+    box-shadow: 0 4px 15px rgba(185, 3, 3, 0.3);
+    transition: all 0.3s ease;
+    display: inline-block;
+    border: none;
+    cursor: pointer;
+}
+
+.order-now-btn:hover {
+    background-color: var(--dark-color);
+    transform: translateY(-3px); /* മുകളിലേക്ക് അല്പം ഉയർന്നു നിൽക്കാൻ */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    color: var(--primary-color);
+}
 
         @media (max-width: 600px) {
             header h1 { font-size: 3rem; }
@@ -146,7 +178,7 @@
     <header>
         <h1>Kyachee</h1>
         <h2>snaxx</h2>
-        <p>"Fun to say, better to eat"</p>
+        <p>"പറയാൻ രസം, കഴിക്കാൻ അതിലേറെ രസം"</p>
     </header>
 
     <nav>
@@ -170,7 +202,7 @@
                     <span id="qty-Murukku">1</span>
                     <button class="qty-btn" onclick="changeQty('Murukku', 1)">+</button>
                 </div>
-                <button onclick="addToCart('Murukku', 150)" class="order-btn">Add to Cart</button>
+               <button onclick="addToCart('Murukku',150,'Murukku','https://i.ibb.co/RpFxkTZK/69c9fb98-c69a-4354-bb20-78a7ab9bccf1-r1-c1.jpg')" class="order-btn">Add to Cart</button>
             </div>
 
             <!-- Product 2: Banana Chips -->
@@ -185,7 +217,7 @@
                     <span id="qty-BananaChips">1</span>
                     <button class="qty-btn" onclick="changeQty('BananaChips', 1)">+</button>
                 </div>
-                <button onclick="addToCart('Banana Chips', 150, 'BananaChips')" class="order-btn">Add to Cart</button>
+               <button onclick="addToCart('Banana Chips',150,'BananaChips','https://i.ibb.co/Zp47rMKM/69c9fb98-c69a-4354-bb20-78a7ab9bccf1-r1-c2.jpg')" class="order-btn">Add to Cart</button>
             </div>
 
             <!-- Product 3: Joystick -->
@@ -200,7 +232,7 @@
                     <span id="qty-Joystick">1</span>
                     <button class="qty-btn" onclick="changeQty('Joystick', 1)">+</button>
                 </div>
-                <button onclick="addToCart('Joystick', 150, 'Joystick')" class="order-btn">Add to Cart</button>
+                <button onclick="addToCart('Joystick',150,'Joystick','https://i.ibb.co/ycx85w7Y/5f710085-b22f-4622-b498-50ab6c53aa5a.jpg')" class="order-btn">Add to Cart</button>
             </div>
 
             <!-- Product 4: Tapioca Chips -->
@@ -215,87 +247,95 @@
                     <span id="qty-Tapioca">1</span>
                     <button class="qty-btn" onclick="changeQty('Tapioca', 1)">+</button>
                 </div>
-                <button onclick="addToCart('Tapioca Chips', 150, 'Tapioca')" class="order-btn">Add to Cart</button>
+                <button onclick="addToCart('Tapioca Chips',150,'Tapioca','https://i.ibb.co/PsDT9sby/69c9fb98-c69a-4354-bb20-78a7ab9bccf1-r1-c3.jpg')" class="order-btn">Add to Cart</button>
             </div>
 
-             <!-- Product 1: Special Murukku
- -->
+             <!-- Special Murukku -->
             <div class="product-card">
-                <div class="product-img">
-                    <img src="https://i.ibb.co/VWQDkyXZ/7106bb05-ef96-4edb-9aa8-68aa5beeacda.jpg" alt="Murukku">
-                </div>
+                <div class="product-img"><img src="https://i.ibb.co/VWQDkyXZ/7106bb05-ef96-4edb-9aa8-68aa5beeacda.jpg" alt="Special Murukku"></div>
                 <h3>Special Murukku</h3>
-                <p class="price">₹150/kg</p>
+                <p>₹150/kg</p>
                 <div class="qty-controls">
-                    <button class="qty-btn" onclick="changeQty('Special Murukku', -1)">-</button>
-                    <span id="qty-Special Murukku                    ">1</span>
-                    <button class="qty-btn" onclick="changeQty('Special Murukku', 1)">+</button>
+                    <button class="qty-btn" onclick="changeQty('SpecialMurukku', -1)">-</button>
+                    <span id="qty-SpecialMurukku">1</span>
+                    <button class="qty-btn" onclick="changeQty('SpecialMurukku', 1)">+</button>
                 </div>
-                <button onclick="addToCart('Special Murukku', 150)" class="order-btn">Add to Cart</button>
+                <button onclick="addToCart('Special Murukku',150,'SpecialMurukku','https://i.ibb.co/VWQDkyXZ/7106bb05-ef96-4edb-9aa8-68aa5beeacda.jpg')" class="order-btn">Add to Cart</button>
             </div>
-
-             <!-- Product 1: Cheese Balls -->
+            
+            <!-- Cheese Balls -->
             <div class="product-card">
-                <div class="product-img">
-                    <img src="https://i.ibb.co/5X3VD5xB/69c9fb98-c69a-4354-bb20-78a7ab9bccf1-r2-c2.jpg" alt="Murukku">
-                </div>
+                <div class="product-img"><img src="https://i.ibb.co/5X3VD5xB/69c9fb98-c69a-4354-bb20-78a7ab9bccf1-r2-c2.jpg" alt="Cheese Balls"></div>
                 <h3>Cheese Balls</h3>
-                <p class="price">₹150/kg</p>
+                <p>₹150/kg</p>
                 <div class="qty-controls">
-                    <button class="qty-btn" onclick="changeQty('Cheese Balls', -1)">-</button>
-                    <span id="qty-Cheese Balls">1</span>
-                    <button class="qty-btn" onclick="changeQty('Cheese Balls', 1)">+</button>
+                    <button class="qty-btn" onclick="changeQty('CheeseBalls', -1)">-</button>
+                    <span id="qty-CheeseBalls">1</span>
+                    <button class="qty-btn" onclick="changeQty('CheeseBalls', 1)">+</button>
                 </div>
-                <button onclick="addToCart('Cheese Balls', 150)" class="order-btn">Add to Cart</button>
+               <button onclick="addToCart('Cheese Balls',150,'CheeseBalls','https://i.ibb.co/5X3VD5xB/69c9fb98-c69a-4354-bb20-78a7ab9bccf1-r2-c2.jpg')" class="order-btn">Add to Cart</button>
             </div>
+        </div>
 
+       <!-- Place Order ബട്ടൺ സെന്ററിൽ വരാൻ -->
+        <div class="place-order-wrapper">
+            <a href="cart.html" class="order-now-btn">
+                Place Your Order 🛒
+            </a>
         </div>
     </section>
-
-    <section class="contact-section" id="contact">
+<section class="contact-section" id="contact">
         <h2>Get In Touch</h2>
-        <p>📞 +91 9744390615 | 📍 Kottayam, Kerala</p>
+        <div style="margin: 20px 0;">
+            <p>📞 +91 9744390615 | +91 9744390657</p>
+            <p>📧 shahid321bila@gmail.com</p>
+            <p>📍 Kottayam, Kerala</p>
+        </div>
+        <a href="https://maps.app.goo.gl/CZnFcyiJfntQVXqbA" class="order-btn" target="_blank" style="background: white;">View Location</a>
     </section>
+<script>
+// ഓരോ product inte quantity store cheyyan
+let itemQuantities = {};
 
-    <script>
-        // താൽക്കാലികമായി ഓരോ പ്രൊഡക്റ്റിന്റെയും ക്വാണ്ടിറ്റി സൂക്ഷിക്കാൻ
-        let itemQuantities = {};
+// ➕➖ quantity change
+function changeQty(id, change) {
+    if (!itemQuantities[id]) itemQuantities[id] = 1;
 
-        function changeQty(id, change) {
-            if (!itemQuantities[id]) itemQuantities[id] = 1;
-            
-            itemQuantities[id] += change;
-            
-            if (itemQuantities[id] < 1) itemQuantities[id] = 1;
-            
-            document.getElementById('qty-' + id).innerText = itemQuantities[id];
-        }
+    itemQuantities[id] += change;
 
-        function addToCart(name, price, id) {
-            // Cart ഡാറ്റ LocalStorage-ൽ നിന്ന് എടുക്കുന്നു
-            let cart = JSON.parse(localStorage.getItem("cart")) || [];
-            
-            // സ്പാനിൽ നിന്നുള്ള കറന്റ് ക്വാണ്ടിറ്റി എടുക്കുന്നു
-            let qty = parseInt(document.getElementById('qty-' + (id || name)).innerText);
+    if (itemQuantities[id] < 1) itemQuantities[id] = 1;
 
-            let existingItem = cart.find(p => p.name === name);
+    document.getElementById('qty-' + id).innerText = itemQuantities[id];
+}
 
-            if (existingItem) {
-                existingItem.qty += qty;
-            } else {
-                cart.push({ name, price, qty });
-            }
+// 🛒 add to cart (WITH IMAGE)
+function addToCart(name, price, id, img) {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-            // തിരികെ LocalStorage-ലേക്ക് സേവ് ചെയ്യുന്നു
-            localStorage.setItem("cart", JSON.stringify(cart));
+    let qty = parseInt(document.getElementById('qty-' + id).innerText);
 
-            alert(qty + " kg " + name + " added to cart!");
-            
-            // ആഡ് ചെയ്ത ശേഷം ക്വാണ്ടിറ്റി 1 ലേക്ക് റീസെറ്റ് ചെയ്യുന്നു
-            document.getElementById('qty-' + (id || name)).innerText = 1;
-            itemQuantities[id || name] = 1;
-        }
-    </script>
+    let existingItem = cart.find(p => p.name === name);
+
+    if (existingItem) {
+        existingItem.qty += qty;
+    } else {
+        cart.push({
+            name: name,
+            price: price,
+            qty: qty,
+            img: img // ✅ image save
+        });
+    }
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+
+    alert(qty + " kg " + name + " added to cart!");
+
+    // reset qty
+    document.getElementById('qty-' + id).innerText = 1;
+    itemQuantities[id] = 1;
+}
+</script>   
 
 </body>
 </html>
